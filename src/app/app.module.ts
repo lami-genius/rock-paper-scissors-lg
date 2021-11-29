@@ -16,6 +16,10 @@ import { GameSummaryComponent } from './start-game/game-summary/game-summary.com
 import { PlayerOptionsComponent } from './start-game/player-options/player-options.component';
 import { PlayGameComponent } from './start-game/play-game/play-game.component';
 import { LoginComponent } from './user/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { toastrSettings } from './toatr-settings';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { LoginComponent } from './user/login/login.component';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    FormsModule,
+    ToastrModule.forRoot(toastrSettings),
+    BrowserAnimationsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

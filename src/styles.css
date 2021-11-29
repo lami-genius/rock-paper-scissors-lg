@@ -1,24 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-* {
-  background: rgba(29, 50, 83, 1);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-html,
-body {
-  min-height: 100% !important;
-  height: 100%;
-  background: rgba(29, 50, 83, 1);
-}
 
 html,
 body,
-#fullheight {
+#fullheight > * {
   min-height: 100% !important;
   height: 100%;
   margin-top: -10px;
+  font-family: Comfortaa, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 #fullheight {
   background: rgba(29, 50, 83, 1);
 }
@@ -47,4 +38,33 @@ body,
 
 .active-link {
   color: burlywood;
+}
+
+.join-button,
+.start-button {
+  padding: 10px;
+  border: 1px solid #2c7af0;
+  background-color: #2c7af0;
+  margin: 10px 0;
+  color: white;
+  font-size: 2em;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0px 5px #888888;
+  transform: translateY(-6px);
+}
+.join-button:active,
+.start-button:active {
+  transform: translateY(-2px);
+}
+
+.start-button {
+  margin-bottom: 100px;
+}
+
+@media (max-width: 700px) {
+  .join-button,
+  .start-button {
+    font-size: 1.5em;
+  }
 }
