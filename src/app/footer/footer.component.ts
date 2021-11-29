@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   private _linkedInURL: string = "https://www.linkedin.com/in/fonyuy-boris-lami"
   private _linkGitHubURL: string = "https://github.com/lami-genius/rock-paper-scissors-lg"
-  private _figmaDesignURL: string = "https://www.figma.com/file/1kuqPMOhLhLaFUhuOJDYFk/Rock-Paper-Scissors?node-id=0%3A1"
+  private _figmaDesignURL: string = "https://www.figma.com/community/file/1047071797355688164"
 
   public get figmaDesignURL(): string {
     return this._figmaDesignURL;
