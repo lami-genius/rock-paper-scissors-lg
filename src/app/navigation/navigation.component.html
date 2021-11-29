@@ -1,1 +1,38 @@
-<p>navigation works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark  my-3">
+    <div class="container-fluid">
+        <span class="logo">
+            <img class="img-fluid" [src]="logoImgUrl" alt="LG Logo">
+            <span class="navbar-brand game-font">Games</span>
+        </span>
+        <button class="navbar-toggler nav-toggle-height" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse my-2" id="navbarToggle">
+            <div class="container-fluid">
+                <div class="row justify-content-end">
+                    <div class="col-md-1">
+                        <button class="nav-element">Home</button>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="nav-element">Rules</button>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="nav-element">Login</button>
+                    </div>
+                    <div class="col-md-1">
+                        <span class="nav-item">
+                            <button class="nav-element">Join Now</button>
+                        </span>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="nav-element">Start</button>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,24 @@
+.game-font {
+  font-size: 5ch;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle-height {
+  height: 50px;
+}
+
+.nav-element {
+  background-color: rgba(23, 0, 0, 1);
+  color: white;
+  font-weight: 700;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 0px 10px;
+  font-size: 16px;
+  width: 100%;
+}
