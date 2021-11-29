@@ -44,3 +44,13 @@ details > p {
 .blue {
   background-color: #133280;
 }
+
+@media (max-width: 700px) {
+  details summary {
+    font-size: 0.5em;
+  }
+
+  details > p {
+    font-size: 0.9em;
+  }
+}
