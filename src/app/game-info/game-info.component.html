@@ -1,1 +1,15 @@
-<p>game-info works!</p>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-10 col-lg-9 get-num-games justify-content-center">
+            <form (ngSubmit)="onSubmit()" #form="ngForm">
+                <label for="numGames">How many games do you wish to play?</label>
+                <input type="number" class="form-control" id="numGames" min="minNumGames" max="maxNumGames"
+                    [(ngModel)]="numberOfGames" name="numberOfGames" required aria-describedby="emailHelp"
+                    title="Number of games">
+                <button type="submit" [disabled]="!form.form.valid" class="start-button">Start
+                    Game
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
