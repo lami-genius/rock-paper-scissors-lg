@@ -1,0 +1,45 @@
+.game-rule {
+  font-size: 3em;
+}
+
+@media (max-width: 700px) {
+  .game-rule {
+    font-size: 2em;
+  }
+}
+
+.img-fluid {
+  height: 95%;
+}
+
+li {
+  font-size: 2.5em;
+  color: black;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details summary {
+  display: inline;
+  width: 100%;
+  border-radius: 5px;
+}
+
+details > p {
+  font-size: 2em;
+  font-family: Roboto, sans-serif;
+}
+
+.green {
+  background-color: #3d8116;
+}
+
+.red {
+  background-color: #81200e;
+}
+
+.blue {
+  background-color: #133280;
+}

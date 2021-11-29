@@ -1,1 +1,28 @@
-<p>Rules</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 game-rule offset-1">
+            Game rules
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 offset-sm-1">
+            <a data-toggle="tooltip" data-placement="right" title="Click to read detailed rules"
+                href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">
+                <img class="img img-fluid" [src]="rulesImgLink" alt="Rules">
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <ol class="list-group bg-white rounded">
+                <details *ngFor="let rule of rulesText; let i=index;">
+                    <summary data-toggle="tooltip" data-placement="right" title="Click to view rule details">
+                        <li class="list-group-item list-group-item-light">
+                            {{(i + 1)}}. {{ rule.brief }}</li>
+                    </summary>
+                    <p class="{{rule.color}}">
+                        {{rule.fullDesc}}
+                    </p>
+                </details>
+            </ol>
+        </div>
+    </div>
+</div>
