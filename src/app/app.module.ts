@@ -16,7 +16,6 @@ import { GameSummaryComponent } from './start-game/game-summary/game-summary.com
 import { PlayerOptionsComponent } from './start-game/player-options/player-options.component';
 import { PlayGameComponent } from './start-game/play-game/play-game.component';
 import { LoginComponent } from './user/login/login.component';
-import { RegisterComponent } from './user/register/register.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { RegisterComponent } from './user/register/register.component';
     ScoreComponent,
     GameSummaryComponent,
     PlayerOptionsComponent,
-    LoginComponent,
-    RegisterComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
