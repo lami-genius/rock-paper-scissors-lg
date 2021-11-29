@@ -74,3 +74,22 @@
   box-shadow: 0px 10px #888888;
   border-radius: 50%;
 }
+
+@media (max-width: 700px) {
+  .rock,
+  .paper,
+  .scissors {
+    font-size: 3em;
+    display: inline;
+  }
+
+  .message,
+  .fun {
+    font-size: 1.5em;
+  }
+
+  .join-button,
+  .start-button {
+    font-size: 1.5em;
+  }
+}
