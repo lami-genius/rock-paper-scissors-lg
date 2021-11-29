@@ -44,7 +44,7 @@ export class FooterComponent implements OnInit {
 
   onClickLink(link: string): void {
     window.open(
-      link === 'linkedin' ? this._linkedInURL : link === 'github' ? this._linkGitHubURL : link === 'figmas' ? this.figmaDesignURL : '',
+      link === 'linkedin' ? this._linkedInURL : link === 'github' ? this._linkGitHubURL : link === 'figma' ? this.figmaDesignURL : '',
       '_blank'
     );
   }
