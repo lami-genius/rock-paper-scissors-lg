@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   background: rgba(29, 50, 83, 1);
-  font-family: Comfortaa, Arial, Helvetica, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 html,
