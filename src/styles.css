@@ -8,6 +8,10 @@
   color: white;
 }
 
+.container {
+  color: white;
+}
+
 .background-color {
   background: rgba(29, 50, 83, 1);
 }
@@ -15,4 +19,8 @@
 .svg-inline--fa.fa-w-16 {
   width: 1em;
   background-color: black;
+}
+
+.active-link {
+  color: burlywood;
 }
