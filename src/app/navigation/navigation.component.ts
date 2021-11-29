@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { INavLink } from '../model/inav-link';
 
 @Component({
   selector: 'rpsLG-navigation',
@@ -8,16 +9,41 @@ import { Component, OnInit } from "@angular/core";
 
 export class NavigationComponent implements OnInit {
   // attributes
-  private _logoImgUrl: string = "./assets/img/logo.png"
-  private _navElements: Map<string, string> = new Map<string, string>()
+  private _logoImgUrl: string = './assets/img/logo.png'
+  private _navElements: INavLink[] = [];
 
   constructor() {
     // add routes and label of routes
-    this._navElements.set('/home', "Home")
-    this._navElements.set('/rules', "Rules")
-    this._navElements.set('/login', "Login")
-    this._navElements.set('/register', "Join Now")
-    this._navElements.set('/play', "Play")
+    this._navElements.push(
+      {
+        route: '/home',
+        label: 'Home'
+      }
+    )
+    this._navElements.push(
+      {
+        route: '/rules',
+        label: 'Rules'
+      }
+    )
+    this._navElements.push(
+      {
+        route: '/login',
+        label: 'Login'
+      }
+    )
+    this._navElements.push(
+      {
+        route: '/register',
+        label: "Join Now"
+      }
+    )
+    this._navElements.push(
+      {
+        route: '/play',
+        label: 'Play'
+      }
+    )
   }
 
   ngOnInit(): void {
@@ -32,11 +58,11 @@ export class NavigationComponent implements OnInit {
     this._logoImgUrl = logoImgUrl;
   }
 
-  public get navElements(): Map<string, string> {
+  public get navElements(): INavLink[] {
     return this._navElements;
   }
 
-  public set navElements(navElements: Map<string, string>) {
+  public set navElements(navElements: INavLink[]) {
     this._navElements = navElements;
   }
 
