@@ -1,1 +1,54 @@
-Landing Page
+<div class="row">
+    <div class="col-md-5  col-sm-10  offset-md-1  offset-xs-0">
+        <div class="row justify-content-center">
+            <div class="col-sm-5 col-6">
+                <img class="img img-fluid" [src]="rockImgLink" alt="Rock">
+            </div>
+            <div class="col-sm-5 col-6">
+                <img class="img img-fluid" [src]="paperImgLink" alt="Paper">
+            </div>
+        </div>
+        <div class="vertical-play-up">
+            <div class="row justify-content-center  px-0">
+                <div class="col-sm-1 col-md-2 col-1 px-0" style=" background-color:rgba(0, 0, 0, 0);">
+                    <fa-icon style="font-size: 12ch; color: blue;
+                    background-color:rgba(0, 0, 0, 0);" [icon]="['fas', 'play']">
+                    </fa-icon>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-5 col-xs-5 col-5">
+                <img class="img img-fluid" [src]="scissorsImgLink" alt="Scissors">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="row">
+            <div class="col">
+                <span class="rock">ROCK, </span>
+                <span class="paper">PAPER, </span>
+                <span class="scissors">SCISSORS.</span>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-6 col-lg-6">
+                <span class="message">Want to have </span><span class="fun">fun?</span>
+            </div>
+        </div>
+        <div class="row my-sm-4"></div>
+        <div class="row my-sm-4"></div>
+        <div class="row mt-4">
+            <div class="col-md-7 col-xl-6">
+                <button [routerLink]="['/register']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                    class="join-button">Join Now</button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-7 col-xl-6">
+                <button [routerLink]="['/play']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                    class="start-button">Start Game</button>
+            </div>
+        </div>
+    </div>
+</div>

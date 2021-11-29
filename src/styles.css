@@ -17,6 +17,7 @@ body,
 #fullheight {
   min-height: 100% !important;
   height: 100%;
+  margin-top: -10px;
 }
 #fullheight {
   background: rgba(29, 50, 83, 1);
@@ -37,6 +38,11 @@ body,
 .svg-inline--fa.fa-w-16 {
   width: 1em;
   background-color: black;
+}
+
+.svg-inline--fa.fa-w-14 {
+  width: 0.875em;
+  background-color: rgb(0, 0, 0, 0);
 }
 
 .active-link {

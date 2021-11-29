@@ -25,3 +25,8 @@ div {
   color: red;
   background-color: black;
 }
+
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+  background-color: black;
+}
