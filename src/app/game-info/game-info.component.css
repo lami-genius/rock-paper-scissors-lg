@@ -70,10 +70,16 @@ input[type="number"] {
 @media (max-width: 700px) {
   .start-button {
     font-size: 1.5em;
+    margin-bottom: 20px;
   }
   label {
     margin: 0;
     text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  input[type="number"] {
+    margin-bottom: 40px;
   }
 }
 
