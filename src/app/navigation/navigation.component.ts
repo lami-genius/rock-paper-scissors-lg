@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 export class NavigationComponent implements OnInit {
   // attributes
   private _logoImgUrl: string = "./assets/img/logo.png"
-  private _navElements: Map<string, string> = new Map<string, string>();
+  private _navElements: Map<string, string> = new Map<string, string>()
 
   constructor() {
     // add routes and label of routes

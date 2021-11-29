@@ -4,6 +4,23 @@
   font-family: Comfortaa, Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+  min-height: 100% !important;
+  height: 100%;
+  background: rgba(29, 50, 83, 1);
+}
+
+html,
+body,
+#fullheight {
+  min-height: 100% !important;
+  height: 100%;
+}
+#fullheight {
+  background: rgba(29, 50, 83, 1);
+}
+
 .container-fluid {
   color: white;
 }
