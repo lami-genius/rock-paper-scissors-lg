@@ -74,8 +74,6 @@ export class PlayGameComponent implements OnInit {
 
 
     if (this.hasEnded()) {
-      this._toastrService.warning("Game over!")
-
       this._toastrService.success("Please restart a new game!")
       this.numGamesLeft = 0
       this.numGamesPlayed = this.initialNumGames
@@ -86,18 +84,16 @@ export class PlayGameComponent implements OnInit {
       this.winnerMsg()
     }
     else {
+      // check who won
+      this.gameEval(event, p.shape)
 
       // adjust counter for games left
       this.updateNumGames()
 
-      console.log('You played ' + event)
-
       // computer play
       p.updateColor('rand')
-      console.log('Com played ' + p.shape)
 
-      // check who won
-      this.gameEval(event, p.shape)
+
     }
 
   }
@@ -108,7 +104,7 @@ export class PlayGameComponent implements OnInit {
 
 
     if (you === com) {
-      this._toastrService.info("No winner for this round")
+      this._toastrService.info("Tire round")
     }
     else if ((you === "rock" && com === "scissors") ||
       (you === "scissors" && com === "paper") ||
@@ -131,16 +127,32 @@ export class PlayGameComponent implements OnInit {
     else {
       this.numGamesLeft--
       this.numGamesPlayed++
+
+      const p: any = this.com
+
+
+      if (this.hasEnded()) {
+        this._toastrService.warning("Game over!")
+
+        this.numGamesLeft = 0
+        this.numGamesPlayed = this.initialNumGames
+
+        p.colorReset();
+
+        // message of winner
+        this.winnerMsg()
+      }
     }
   }
 
   hasEnded(): boolean {
-    return (this.numGamesLeft <= 1)
+    return (this.numGamesLeft <= 0)
   }
 
   winnerMsg(): void {
     const u: any = this.yourScore
     const c: any = this.comScore
+    console.log(c.getWins(), ' vs ' + u.getWins())
 
     if (c.getWins() > u.getWins())
       this._toastrService.success("Com won!")
