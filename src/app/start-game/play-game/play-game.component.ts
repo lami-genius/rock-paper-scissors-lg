@@ -167,11 +167,11 @@ export class PlayGameComponent implements OnInit {
       this.strongMsg = "Com won "
     }
     else if (c.getWins() == u.getWins()) {
-      this.endGameMsg = c.getWins() + " wins and " + c.getLosses() + " losses" + " " + this.getRandomEmoji(this.neutralEmojis)
-      this.strongMsg = "A tire "
+      this.endGameMsg = c.getWins() + " win" + (c.getWins() > 1 ? "s" : "") + " and " + c.getLosses() + " loss" + (c.getWins() > 1 ? "es" : "") + this.getRandomEmoji(this.neutralEmojis)
+      this.strongMsg = "A tire with "
     }
     else {
-      this.endGameMsg = u.getWins() + ", loss " + u.getLosses() + " and tired " + (this.initialNumGames - (u.getWins() + u.getLosses())) + " " + this.getRandomEmoji(this.celebrationEmojis)
+      this.endGameMsg = u.getWins() + ", loss " + u.getLosses() + + " and tired " + (this.initialNumGames - (u.getWins() + u.getLosses())) + " " + this.getRandomEmoji(this.celebrationEmojis)
       this.strongMsg = "You won "
     }
   }
@@ -179,10 +179,29 @@ export class PlayGameComponent implements OnInit {
   restartGame(event: any): void {
     const u: any = this.yourScore
     const c: any = this.comScore
+    const p: any = this.com
+
     c.reset()
     u.reset()
     this.numGamesLeft = this.initialNumGames
     this.numGamesPlayed = 0
-    location.reload();
+    this.endGameMsg = ""
+
+    u.childVisble = false
+    c.childVisble = false
+    p.childVisble = false
+
+    u.changeDetectorRef.detectChanges()
+    c.changeDetectorRef.detectChanges()
+    p.changeDetectorRef.detectChanges()
+
+    u.childVisble = true
+    c.childVisble = true
+    p.childVisble = true
+
+    u.changeDetectorRef.detectChanges()
+    c.changeDetectorRef.detectChanges()
+    p.changeDetectorRef.detectChanges()
+
   }
 }

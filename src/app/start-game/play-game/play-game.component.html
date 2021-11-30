@@ -8,7 +8,7 @@
                 endGameMsg }}
             </span> <button (click)="restartGame($event)" class="btn btn-info mt-2">Restart?</button>
         </div>
-        <div class="col-sm-4 col-12 my-4" [hidden]="numGamesLeft == 0">
+        <div class="col-sm-4 col-12 my-4" [hidden]="numGamesLeft === 0 || endGameMsg.length === 0">
             <span class="alert alert-warning" data-dismiss="alert" aria-label="Close">{{
                 endGameMsg }}
             </span>
