@@ -28,6 +28,7 @@
     "rxjs": "~6.6.0",
     "toastr": "^2.1.4",
     "tslib": "^2.3.0",
+    "two-way-decorator": "^0.2.2",
     "typeface-muli": "^1.1.13",
     "zone.js": "~0.11.4"
   },

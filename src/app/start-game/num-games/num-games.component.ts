@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TwoWay } from 'two-way-decorator';
 
 @Component({
   selector: 'rpsLG-num-games',
@@ -6,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./num-games.component.css']
 })
 export class NumGamesComponent implements OnInit {
-  @Input() gameCount: number = 0;
+  @Input()
+  gameCount: number = 1;
 
   constructor() { }
 

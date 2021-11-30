@@ -6,6 +6,7 @@
                 <input type="number" class="form-control" id="numGames" min="minNumGames" max="maxNumGames"
                     [(ngModel)]="numberOfGames" name="numberOfGames" required aria-describedby="emailHelp"
                     title="Number of games">
+                <small *ngIf="!form.form.valid">Number of games is required</small>
                 <button type="submit" [disabled]="!form.form.valid" class="start-button">Start
                     Game
                 </button>

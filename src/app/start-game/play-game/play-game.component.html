@@ -8,42 +8,43 @@
         <div class="col-md-3 offset-md-1 col-3">
             <div class="row">
                 <div class="col-12">
-                    <span>Computer Score</span>
+                    <span>Com's Score</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <rpsLG-score [numWins]=9 [numLosses]=10></rpsLG-score>
+                    <rpsLG-score #comScore [numWins]=comScore.getWins() [numLosses]=comScore.getLosses()></rpsLG-score>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-3  mx-md-2 mx-2">
-            # Played <rpsLG-num-games [gameCount]=99></rpsLG-num-games>
+            # Played <rpsLG-num-games [gameCount]="numGamesPlayed"></rpsLG-num-games>
 
         </div>
         <div class="col-md-3 col-2 mx-md-2">
-            # Left <rpsLG-num-games [gameCount]=9></rpsLG-num-games>
+            # Left <rpsLG-num-games [gameCount]="numGamesLeft"></rpsLG-num-games>
         </div>
-
         <div class="col-md-1 col-3">
             <span>Your Score</span>
-            <rpsLG-score [numWins]=13 [numLosses]=19></rpsLG-score>
+            <rpsLG-score #yourScore [numWins]=yourScore.getWins() [numLosses]=yourScore.getLosses()></rpsLG-score>
         </div>
     </div>
     <div class="row">
         <div class="col-md-5  col-sm-12  offset-md-0  offset-xs-0 mt-4">
             <div class="row">
-                <rpsLG-player-options [playButtonColor]="'5c6676'"></rpsLG-player-options>
+                <rpsLG-player-options style="pointer-events: none" #com [playButtonColor]="'5c6676'">
+                </rpsLG-player-options>
             </div>
             <div class="row justify-content-center mt-4">
-                <div class="col-4">
-                    <h3>Computer</h3>
+                <div class="col-3 mx-2">
+                    <h3>Com</h3>
                 </div>
             </div>
         </div>
         <div class="col-md-5  col-sm-12  offset-md-2  offset-xs-0 mt-4">
             <div class="row">
-                <rpsLG-player-options></rpsLG-player-options>
+                <rpsLG-player-options (clickedObjEvent)="handleObjClickedEvent($event)">
+                </rpsLG-player-options>
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-2 mx-2">

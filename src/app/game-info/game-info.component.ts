@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NumGamesService } from './../services/num-games.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -12,26 +13,38 @@ export class GameInfoComponent implements OnInit {
   private _isValidNumGames: boolean = false
   private _minNumGames: number = 1
   private _maxNumGames: number = 99
+  @Output() numOfGamesEvent = new EventEmitter()
 
 
-  constructor(private _toastrService: ToastrService, private _router: Router) { }
+  constructor(private _toastrService: ToastrService,
+    private _router: Router,
+    private _numGamesService: NumGamesService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
+    // check if input is valid
     if (this.hasEnteredValidNumGames()) {
-      console.log(this._numberOfGames)
       this._router.navigate(['/play'])
       this._toastrService.success(this._numberOfGames + " game" + (this._numberOfGames > 1 ? "s" : "") + " loading ...")
+
+      // send valid number of games to service
+      this._numGamesService.setNumGames(this._numberOfGames)
+      localStorage.setItem('gameNumGames', this._numberOfGames.toString());
+
     }
     else {
       this._toastrService.info("Enter a positive number.")
       this._toastrService.warning("Invalid " + this._numberOfGames + "!!")
+
+      // in case of invalid, set numberOfGames to minNumGames (1)
       this._numberOfGames = this._minNumGames
+
     }
   }
 
+  // method checks if numOfGames is valid
   hasEnteredValidNumGames() {
     return (
       this._numberOfGames >= this._minNumGames &&

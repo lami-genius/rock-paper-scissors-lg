@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { toastrSettings } from './toatr-settings';
 import { NumGamesComponent } from './start-game/num-games/num-games.component';
+import { NumGamesService } from './services/num-games.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { NumGamesComponent } from './start-game/num-games/num-games.component';
     BrowserAnimationsModule
   ],
 
-  providers: [],
+  providers: [NumGamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

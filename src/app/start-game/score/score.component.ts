@@ -14,4 +14,20 @@ export class ScoreComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  increementWin(): void {
+    this.numWins++
+  }
+
+  increementLosses(): void {
+    this.numLosses++
+  }
+
+  getWins(): number {
+    return this.numWins
+  }
+
+  getLosses(): number {
+    return this.numLosses
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'rpsLG-player-options',
@@ -13,8 +13,14 @@ export class PlayerOptionsComponent implements OnInit {
   private _scissorsImgLink: string = './assets/img/real-scissors.png'
   private _playImgLink: string = './assets/img/play-button.png'
   @Input() playButtonColor: string = "2c7af0";
+  public scissorsSelectedBackground: string = ""
+  public paperSelectedBackground: string = ""
+  public rockSelectedBackground: string = ""
+  public colorSelected: string = 'orange'
+  public shape: string = "scissors"
+  @Output() clickedObjEvent = new EventEmitter()
 
-
+  public arrObj: string[] = ['scissors', 'rock', 'paper']
   constructor() { }
 
   ngOnInit(): void {
@@ -53,6 +59,44 @@ export class PlayerOptionsComponent implements OnInit {
   public set playImgLink(playImgLink: string) {
     this._playImgLink = playImgLink;
   }
+
+  colorReset(): void {
+    this.paperSelectedBackground = ""
+    this.rockSelectedBackground = ""
+    this.scissorsSelectedBackground = ""
+  }
+
+  updateColor(shape: string) {
+    if (shape === 'rand') {
+      let idx = Math.floor(Math.random() * 3)
+      shape = this.arrObj[idx]
+
+      this.colorReset();
+
+    }
+
+    this.shape = shape
+    if (shape === 'scissors') {
+      this.scissorsSelectedBackground = "background-color: " + this.colorSelected + ";"
+      this.paperSelectedBackground = ""
+      this.rockSelectedBackground = ""
+    }
+
+    if (shape === 'paper') {
+      this.paperSelectedBackground = "background-color: " + this.colorSelected + ";"
+      this.scissorsSelectedBackground = ""
+      this.rockSelectedBackground = ""
+    }
+
+    if (shape === 'rock') {
+      this.rockSelectedBackground = "background-color:" + this.colorSelected + ";"
+      this.paperSelectedBackground = ""
+      this.scissorsSelectedBackground = ""
+    }
+
+    this.clickedObjEvent.emit(shape)
+  }
+
 
 
 }
