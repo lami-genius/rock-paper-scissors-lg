@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./game-info.component.css']
 })
 export class GameInfoComponent implements OnInit {
-  private _numberOfGames: number = 1
+  private _numberOfGames: number = 5
   private _isValidNumGames: boolean = false
   private _minNumGames: number = 1
   private _maxNumGames: number = 99
@@ -84,7 +84,5 @@ export class GameInfoComponent implements OnInit {
   public set maxNumGames(maxNumGames: number) {
     this.maxNumGames = maxNumGames;
   }
-
-
 
 }

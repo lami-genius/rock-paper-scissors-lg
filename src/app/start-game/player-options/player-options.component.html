@@ -1,4 +1,4 @@
-<div class="row justify-content-sm-center">
+<div class="row justify-content-sm-center justify-content-xs-center ml-4">
     <div class="col-sm-5 col-6 ">
         <img (click)="updateColor('rock')" style="{{rockSelectedBackground}}" class="img img-fluid" [src]="rockImgLink"
             alt="Rock">
@@ -10,7 +10,7 @@
 </div>
 <div class="vertical-play-up">
     <div class="row justify-content-center  px-0">
-        <div class="col-sm-1 col-md-2 col-1 px-0" style=" background-color:rgba(0, 0, 0, 0);">
+        <div class="col-sm-1 col-md-2 col-12 px-0" style=" background-color:rgba(0, 0, 0, 0);">
             <fa-icon (click)="updateColor('rand')"
                 style=" font-size: 20px; background-color:rgba(0, 0, 0, 0); color: #{{ playButtonColor  }}"
                 [icon]="['fas', 'play']">

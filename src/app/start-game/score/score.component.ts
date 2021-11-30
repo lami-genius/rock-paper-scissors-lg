@@ -30,4 +30,9 @@ export class ScoreComponent implements OnInit {
     return this.numLosses
   }
 
+  reset(): void {
+    this.numWins = 0
+    this.numLosses = 0
+  }
+
 }

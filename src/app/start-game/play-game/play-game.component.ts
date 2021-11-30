@@ -16,7 +16,13 @@ export class PlayGameComponent implements OnInit {
   public numGamesPlayed: number = 0
   private _minNumGames: number = 1
   private _maxNumGames: number = 99
-  timeout: any = null;
+  public strongMsg: string = "No winner"
+  public endGameMsg: string = "Start playing!, have fun🥳"
+
+  private happyEmojis: string[] = ["😀", "😃", "😄", "😁", "😆", "😅", "🤣", "😂", "🙂", "🙃", "😉", "😊", "😇", "🥰", "😍"]
+  private sadEmojis: string[] = ['😞', '😒', '🙄', '😟', '😠', '😕', '🙁', '🥺', '😣', '😖', '😫', '😩', '😨', '😰', '😦', '😧', '😢', '😥', '😪', '😭', '😵‍💫', '😮‍💨', '😶‍🌫️', '🤦‍♀️', '🤦', '🤦‍♂️', '🙍‍♀️', '🙍', '🙍‍♂️', '💔']
+  private celebrationEmojis: string[] = ['🎉', '🎊', '🎁', '🎈', '🤠', '😍', '🤩', '🕺', '💃', '🤘', '🤟', '👈', '👉', '👆', '👍', '🙌', '👏', '🍰', '🎂', '🧁', '🥧', '🍮', '🍭', '🍬', '🍺',]
+  private neutralEmojis: string[] = ['🤐', '🤨', '😐', '😑', '😶', '😶‍🌫️', '😏', '😒', '🙄', '😬', '😮‍💨', '🤥', '😕', '😟', '🙁', '😮', '😯', '😲', '😳', '🥺', '😦', '😧', '😨', '😰', '😥', '😢', '😭', '😱', '😖', '😣', '😞', '😓', '😩', '😫', '🥱',]
 
   constructor(private _numGamesService: NumGamesService,
     private _toastrService: ToastrService) {
@@ -78,11 +84,9 @@ export class PlayGameComponent implements OnInit {
       this._toastrService.success("Please restart a new game!")
       this.numGamesLeft = 0
       this.numGamesPlayed = this.initialNumGames
-
       p.colorReset();
 
-      // message of winner
-      this.winnerMsg()
+
     }
     else {
       // com played
@@ -103,20 +107,24 @@ export class PlayGameComponent implements OnInit {
 
 
     if (you === com) {
-      this._toastrService.info("Tire round")
+      this.endGameMsg = "Tire round" + this.getRandomEmoji(this.neutralEmojis) + ", oh boy!"
     }
     else if ((you === "rock" && com === "scissors") ||
       (you === "scissors" && com === "paper") ||
       (you === "paper" && com === "rock")) {
-      this._toastrService.info("You WON this round!")
+      this.endGameMsg = "You WON this round " + this.getRandomEmoji(this.happyEmojis) + " !"
       u.increementWin()
       c.increementLosses()
     }
     else {
-      this._toastrService.warning("You LOST this round!")
+      this.endGameMsg = "You LOST this round " + this.getRandomEmoji(this.sadEmojis) + " !"
       c.increementWin()
       u.increementLosses()
     }
+  }
+
+  getRandomEmoji(d: string[]): string {
+    return d[Math.floor(Math.random() * d.length)]
   }
 
   updateNumGames(): void {
@@ -147,23 +155,34 @@ export class PlayGameComponent implements OnInit {
   }
 
   winnerMsg(): void {
-
-    clearTimeout(this.timeout);
-    var $this = this;
-    this.timeout = setTimeout(() => {
-      $this.delayMsg()
-    }, 2000);
+    this.delayMsg()
   }
 
   delayMsg(): void {
     const u: any = this.yourScore
     const c: any = this.comScore
 
-    if (c.getWins() > u.getWins())
-      this._toastrService.success("Com won!")
-    else if (c.getWins() == u.getWins())
-      this._toastrService.info("This match was a tire!")
-    else
-      this._toastrService.success("You won!")
+    if (c.getWins() > u.getWins()) {
+      this.endGameMsg = c.getWins() + ", loss " + c.getLosses() + " and tired " + (this.initialNumGames - (c.getWins() + c.getLosses())) + " " + this.getRandomEmoji(this.sadEmojis)
+      this.strongMsg = "Com won "
+    }
+    else if (c.getWins() == u.getWins()) {
+      this.endGameMsg = c.getWins() + " wins and " + c.getLosses() + " losses" + " " + this.getRandomEmoji(this.neutralEmojis)
+      this.strongMsg = "A tire "
+    }
+    else {
+      this.endGameMsg = u.getWins() + ", loss " + u.getLosses() + " and tired " + (this.initialNumGames - (u.getWins() + u.getLosses())) + " " + this.getRandomEmoji(this.celebrationEmojis)
+      this.strongMsg = "You won "
+    }
+  }
+
+  restartGame(event: any): void {
+    const u: any = this.yourScore
+    const c: any = this.comScore
+    c.reset()
+    u.reset()
+    this.numGamesLeft = this.initialNumGames
+    this.numGamesPlayed = 0
+    location.reload();
   }
 }

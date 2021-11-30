@@ -28,8 +28,8 @@ export class NavigationComponent implements OnInit {
     )
     this._navElements.push(
       {
-        route: '/settings',
-        label: 'Settings'
+        route: '/gameno',
+        label: 'Game No'
       }
     )
 
@@ -39,19 +39,6 @@ export class NavigationComponent implements OnInit {
         label: 'Play'
       }
     )
-    this._navElements.push(
-      {
-        route: '/login',
-        label: 'Login'
-      }
-    )
-    this._navElements.push(
-      {
-        route: '/register',
-        label: "Join Now"
-      }
-    )
-
   }
 
   ngOnInit(): void {

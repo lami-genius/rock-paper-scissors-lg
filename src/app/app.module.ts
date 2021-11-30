@@ -10,12 +10,10 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { RulesComponent } from './rules/rules.component';
 import { GameInfoComponent } from './game-info/game-info.component';
-import { SummaryGamesPlayedComponent } from './summary-games-played/summary-games-played.component';
 import { ScoreComponent } from './start-game/score/score.component';
 import { GameSummaryComponent } from './start-game/game-summary/game-summary.component';
 import { PlayerOptionsComponent } from './start-game/player-options/player-options.component';
 import { PlayGameComponent } from './start-game/play-game/play-game.component';
-import { LoginComponent } from './user/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -32,11 +30,9 @@ import { NumGamesService } from './services/num-games.service';
     RulesComponent,
     PlayGameComponent,
     GameInfoComponent,
-    SummaryGamesPlayedComponent,
     ScoreComponent,
     GameSummaryComponent,
     PlayerOptionsComponent,
-    LoginComponent,
     NumGamesComponent
   ],
   imports: [

@@ -1,10 +1,20 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-10 heading ">
+    <div class="row justify-content--xs-center ">
+        <div class="col-sm-5 col-12 heading ">
             Game On
         </div>
+        <div class="col-sm-4 col-12 my-4" [hidden]="numGamesLeft > 0">
+            <span class="alert alert-success" data-dismiss="alert" aria-label="Close"><strong>{{strongMsg}}</strong>{{
+                endGameMsg }}
+            </span> <button (click)="restartGame($event)" class="btn btn-info mt-2">Restart?</button>
+        </div>
+        <div class="col-sm-4 col-12 my-4" [hidden]="numGamesLeft == 0">
+            <span class="alert alert-warning" data-dismiss="alert" aria-label="Close">{{
+                endGameMsg }}
+            </span>
+        </div>
     </div>
-    <div class="row">
+    <div class=" row">
         <div class="col-md-3 offset-md-1 col-3">
             <div class="row">
                 <div class="col-12">
@@ -13,7 +23,8 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <rpsLG-score #comScore [numWins]=comScore.getWins() [numLosses]=comScore.getLosses()></rpsLG-score>
+                    <rpsLG-score #comScore [numWins]=comScore.getWins() [numLosses]=comScore.getLosses()>
+                    </rpsLG-score>
                 </div>
             </div>
         </div>
@@ -26,11 +37,12 @@
         </div>
         <div class="col-md-1 col-3">
             <span>Your Score</span>
-            <rpsLG-score #yourScore [numWins]=yourScore.getWins() [numLosses]=yourScore.getLosses()></rpsLG-score>
+            <rpsLG-score #yourScore [numWins]=yourScore.getWins() [numLosses]=yourScore.getLosses()>
+            </rpsLG-score>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5  col-sm-12  offset-md-0  offset-xs-0 mt-4">
+        <div class="col-md-5  col-sm-12  offset-md-0  offset-xs-0 mt-4 ml-4 pl-4">
             <div class="row">
                 <rpsLG-player-options style="pointer-events: none" #com [playButtonColor]="'5c6676'">
                 </rpsLG-player-options>
