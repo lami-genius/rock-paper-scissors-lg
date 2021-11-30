@@ -48,7 +48,7 @@
 @media (min-width: 1750px) {
   .vertical-play-up {
     margin-left: -4ch;
-    margin-top: -7ch;
+    margin-top: 0ch;
     margin-bottom: -3ch;
   }
 }
@@ -58,6 +58,7 @@
   background-color: white;
   padding: 10px;
   border-radius: 5px;
+  object-fit: contain;
 }
 
 .img-fluid:hover {
@@ -70,6 +71,9 @@
   .scissors {
     font-size: 3em;
     display: inline;
+  }
+  .img-fluid {
+    width: 50%;
   }
 
   .message,

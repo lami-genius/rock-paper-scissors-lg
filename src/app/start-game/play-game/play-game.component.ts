@@ -16,6 +16,7 @@ export class PlayGameComponent implements OnInit {
   public numGamesPlayed: number = 0
   private _minNumGames: number = 1
   private _maxNumGames: number = 99
+  timeout: any = null;
 
   constructor(private _numGamesService: NumGamesService,
     private _toastrService: ToastrService) {
@@ -84,16 +85,14 @@ export class PlayGameComponent implements OnInit {
       this.winnerMsg()
     }
     else {
+      // com played
+      p.updateColor('rand')
+
       // check who won
       this.gameEval(event, p.shape)
 
       // adjust counter for games left
       this.updateNumGames()
-
-      // computer play
-      p.updateColor('rand')
-
-
     }
 
   }
@@ -137,8 +136,6 @@ export class PlayGameComponent implements OnInit {
         this.numGamesLeft = 0
         this.numGamesPlayed = this.initialNumGames
 
-        p.colorReset();
-
         // message of winner
         this.winnerMsg()
       }
@@ -150,9 +147,17 @@ export class PlayGameComponent implements OnInit {
   }
 
   winnerMsg(): void {
+
+    clearTimeout(this.timeout);
+    var $this = this;
+    this.timeout = setTimeout(() => {
+      $this.delayMsg()
+    }, 2000);
+  }
+
+  delayMsg(): void {
     const u: any = this.yourScore
     const c: any = this.comScore
-    console.log(c.getWins(), ' vs ' + u.getWins())
 
     if (c.getWins() > u.getWins())
       this._toastrService.success("Com won!")
