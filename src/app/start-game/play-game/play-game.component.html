@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row justify-content--xs-center ">
+    <div class="row justify-content-xs-center ">
         <div class="col-sm-5 col-12 heading ">
             Game On
         </div>
@@ -14,35 +14,35 @@
             </span>
         </div>
     </div>
-    <div class=" row">
-        <div class="col-md-3 offset-md-1 col-3">
-            <div class="row">
+    <div class=" row justify-content-md-center mx-0">
+        <div class="col-md-3 col-3 mx-md-2  mx-0 px-0">
+            <div class="row justify-content-xs-center">
                 <div class="col-12">
                     <span>Com's Score</span>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-xs-center">
                 <div class="col-12">
                     <rpsLG-score #comScore [numWins]=comScore.getWins() [numLosses]=comScore.getLosses()>
                     </rpsLG-score>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-3  mx-md-2 mx-2">
+        <div class="col-md-3 col-2  mx-md-2 mx-2">
             # Played <rpsLG-num-games [gameCount]="numGamesPlayed"></rpsLG-num-games>
 
         </div>
-        <div class="col-md-3 col-2 mx-md-2">
+        <div class="col-md-3 col-2 mx-2">
             # Left <rpsLG-num-games [gameCount]="numGamesLeft"></rpsLG-num-games>
         </div>
-        <div class="col-md-1 col-3">
+        <div class="col-md-1 col-3 mx-0">
             <span>Your Score</span>
             <rpsLG-score #yourScore [numWins]=yourScore.getWins() [numLosses]=yourScore.getLosses()>
             </rpsLG-score>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5  col-sm-12  offset-md-0  offset-xs-0 mt-4 ml-4 pl-4">
+        <div class="col-md-5  col-sm-12  col-auto offset-md-0  offset-1 mt-4">
             <div class="row">
                 <rpsLG-player-options style="pointer-events: none" #com [playButtonColor]="'5c6676'">
                 </rpsLG-player-options>
@@ -53,10 +53,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5  col-sm-12  offset-md-2  offset-xs-0 mt-4">
-            <div class="row">
-                <rpsLG-player-options (clickedObjEvent)="handleObjClickedEvent($event)">
-                </rpsLG-player-options>
+        <div class="col-md-5  col-sm-12 col-12  offset-md-2 offset-1  offset-xs-0 mt-4">
+            <div class="row justify-content-xs-end ">
+                <div class="col-12 offset-xs-1">
+                    <rpsLG-player-options (clickedObjEvent)="handleObjClickedEvent($event)">
+                    </rpsLG-player-options>
+                </div>
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-md-2 col-4 mx-2">

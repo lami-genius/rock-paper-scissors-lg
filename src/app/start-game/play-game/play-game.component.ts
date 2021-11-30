@@ -167,11 +167,11 @@ export class PlayGameComponent implements OnInit {
       this.strongMsg = "Com won "
     }
     else if (c.getWins() == u.getWins()) {
-      this.endGameMsg = c.getWins() + " win" + (c.getWins() > 1 ? "s" : "") + " and " + c.getLosses() + " loss" + (c.getWins() > 1 ? "es" : "") + this.getRandomEmoji(this.neutralEmojis)
-      this.strongMsg = "A tire with "
+      this.endGameMsg = "with " + c.getWins() + " win" + (c.getWins() > 1 ? "s" : "") + " and " + c.getLosses() + " loss" + (c.getLosses() > 1 ? "es" : "") + this.getRandomEmoji(this.neutralEmojis)
+      this.strongMsg = "A tire "
     }
     else {
-      this.endGameMsg = u.getWins() + ", loss " + u.getLosses() + + " and tired " + (this.initialNumGames - (u.getWins() + u.getLosses())) + " " + this.getRandomEmoji(this.celebrationEmojis)
+      this.endGameMsg = u.getWins() + ", loss " + u.getLosses() + " and tired " + (this.initialNumGames - (u.getWins() + u.getLosses())) + " " + this.getRandomEmoji(this.celebrationEmojis)
       this.strongMsg = "You won "
     }
   }
