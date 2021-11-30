@@ -1,1 +1,22 @@
-<p>player-options works!</p>
+<div class="row justify-content-sm-center">
+    <div class="col-sm-5 col-6">
+        <img class="img img-fluid" [src]="rockImgLink" alt="Rock">
+    </div>
+    <div class="col-sm-5 col-6">
+        <img class="img img-fluid" [src]="paperImgLink" alt="Paper">
+    </div>
+</div>
+<div class="vertical-play-up">
+    <div class="row justify-content-center  px-0">
+        <div class="col-sm-1 col-md-2 col-1 px-0" style=" background-color:rgba(0, 0, 0, 0);">
+            <fa-icon style=" font-size: 12ch; background-color:rgba(0, 0, 0, 0); color: #{{ playButtonColor  }}"
+                [icon]="['fas', 'play']">
+            </fa-icon>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm-5 col-xs-5 col-6">
+        <img class="img img-fluid" [src]="scissorsImgLink" alt="Scissors">
+    </div>
+</div>

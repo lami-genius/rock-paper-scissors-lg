@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'rpsLG-score',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./score.component.css']
 })
 export class ScoreComponent implements OnInit {
+  @Input() numWins: number = 0;
+  @Input() numLosses: number = 0;
 
   constructor() { }
 

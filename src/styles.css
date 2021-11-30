@@ -7,7 +7,6 @@ body,
   height: 100%;
   margin-top: -10px;
   background: rgba(29, 50, 83, 1);
-
   font-family: Comfortaa, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -68,5 +67,15 @@ body,
   .join-button,
   .start-button {
     font-size: 1.5em;
+  }
+}
+
+.heading {
+  font-size: 3em;
+}
+
+@media (max-width: 700px) {
+  .heading {
+    font-size: 2em;
   }
 }

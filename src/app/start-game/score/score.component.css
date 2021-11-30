@@ -1,0 +1,30 @@
+.score-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.win,
+.loss {
+  width: fit-content;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 30%;
+  text-align: center;
+  font-size: 2ch;
+  margin: 0px 0px 0px 5px;
+}
+
+.win {
+  background-color: green;
+}
+
+.loss {
+  background-color: red;
+}
+
+@media (max-width: 700px) {
+  .win,
+  .loss {
+    font-size: 2ch;
+  }
+}

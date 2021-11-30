@@ -11,7 +11,7 @@ export class GameInfoComponent implements OnInit {
   private _numberOfGames: number = 1
   private _isValidNumGames: boolean = false
   private _minNumGames: number = 1
-  private _maxNumGames: number = 10000
+  private _maxNumGames: number = 99
 
 
   constructor(private _toastrService: ToastrService, private _router: Router) { }
