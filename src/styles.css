@@ -6,6 +6,8 @@ body,
   min-height: 100% !important;
   height: 100%;
   margin-top: -10px;
+  background: rgba(29, 50, 83, 1);
+
   font-family: Comfortaa, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
