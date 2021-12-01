@@ -167,7 +167,7 @@ export class PlayGameComponent implements OnInit {
       this.strongMsg = "Com won "
     }
     else if (c.getWins() == u.getWins()) {
-      this.endGameMsg = "with " + c.getWins() + " win" + (c.getWins() > 1 ? "s" : "") + " and " + c.getLosses() + " loss" + (c.getLosses() > 1 ? "es" : "") + this.getRandomEmoji(this.neutralEmojis)
+      this.endGameMsg = "with " + c.getWins() + " win" + (c.getWins() > 1 ? "s" : "") + " and " + c.getLosses() + " loss" + (c.getLosses() > 1 ? "es" : "") + " and tired " + (this.initialNumGames - (u.getWins() + u.getLosses())) + " " + this.getRandomEmoji(this.neutralEmojis)
       this.strongMsg = "A tire "
     }
     else {
