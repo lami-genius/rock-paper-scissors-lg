@@ -191,17 +191,9 @@ export class PlayGameComponent implements OnInit {
     c.childVisble = false
     p.childVisble = false
 
-    u.changeDetectorRef.detectChanges()
-    c.changeDetectorRef.detectChanges()
-    p.changeDetectorRef.detectChanges()
-
     u.childVisble = true
     c.childVisble = true
     p.childVisble = true
-
-    u.changeDetectorRef.detectChanges()
-    c.changeDetectorRef.detectChanges()
-    p.changeDetectorRef.detectChanges()
 
   }
 }
