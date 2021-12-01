@@ -1,8 +1,5 @@
-import { PlayerOptionsComponent } from './../player-options/player-options.component';
 import { ToastrService } from 'ngx-toastr';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { NumGamesService } from 'src/app/services/num-games.service';
-import { TwoWay } from 'two-way-decorator';
 
 @Component({
   selector: 'rpsLG-play-game',
@@ -24,8 +21,7 @@ export class PlayGameComponent implements OnInit {
   private celebrationEmojis: string[] = ['🎉', '🎊', '🎁', '🎈', '🤠', '😍', '🤩', '🕺', '💃', '🤘', '🤟', '👈', '👉', '👆', '👍', '🙌', '👏', '🍰', '🎂', '🧁', '🥧', '🍮', '🍭', '🍬', '🍺',]
   private neutralEmojis: string[] = ['🤐', '🤨', '😐', '😑', '😶', '😶‍🌫️', '😏', '😒', '🙄', '😬', '😮‍💨', '🤥', '😕', '😟', '🙁', '😮', '😯', '😲', '😳', '🥺', '😦', '😧', '😨', '😰', '😥', '😢', '😭', '😱', '😖', '😣', '😞', '😓', '😩', '😫', '🥱',]
 
-  constructor(private _numGamesService: NumGamesService,
-    private _toastrService: ToastrService) {
+  constructor(private _toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -44,14 +40,6 @@ export class PlayGameComponent implements OnInit {
       // set ref
       this.initialNumGames = this.numGamesLeft
     }
-    this._numGamesService.getNumGames().subscribe({
-      next: (num) => {
-        if (num)
-          this.numGamesLeft = num
-        console.log(this.numGamesLeft)
-      }
-    })
-
   }
 
   // method checks if numOfGames is valid
@@ -63,7 +51,6 @@ export class PlayGameComponent implements OnInit {
   }
 
   getUpdatedCount(event: any) {
-    console.log('g' + this.numGamesLeft)
   }
 
 
