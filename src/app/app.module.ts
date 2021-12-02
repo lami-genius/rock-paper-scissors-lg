@@ -20,6 +20,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { toastrSettings } from './toatr-settings';
 import { NumGamesComponent } from './start-game/num-games/num-games.component';
 import { NumGamesService } from './services/num-games.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,13 @@ import { NumGamesService } from './services/num-games.service';
     FontAwesomeModule,
     FormsModule,
     ToastrModule.forRoot(toastrSettings),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
 
   providers: [NumGamesService],
