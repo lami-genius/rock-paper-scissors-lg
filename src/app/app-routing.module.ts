@@ -6,11 +6,12 @@ import { RulesComponent } from './rules/rules.component';
 import { GameInfoComponent } from './game-info/game-info.component';
 
 const routes: Routes = [
+  { path: '', component: LandingPageComponent },
   { path: 'home', component: LandingPageComponent },
   { path: 'rules', component: RulesComponent },
   { path: 'gameno', component: GameInfoComponent },
   { path: 'play', component: PlayGameComponent },
-  { path: '', redirectTo: 'gameno', pathMatch: 'full' }
+  { path: '*', redirectTo: 'gameno', pathMatch: 'full' }
 ];
 
 @NgModule({
