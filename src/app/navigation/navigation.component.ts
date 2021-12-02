@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
     // add routes and label of routes
     this._navElements.push(
       {
-        route: '/home',
+        route: '/',
         label: 'Home'
       }
     )
