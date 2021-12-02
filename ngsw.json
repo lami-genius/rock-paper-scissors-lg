@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1638428128735,
+  "timestamp": 1638428385110,
   "index": "/rock-paper-scissors-lg/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/rock-paper-scissors-lg/favicon.ico",
         "/rock-paper-scissors-lg/index.html",
-        "/rock-paper-scissors-lg/main.229dd85b762a21db.js",
+        "/rock-paper-scissors-lg/main.672351a988ffc314.js",
         "/rock-paper-scissors-lg/manifest.webmanifest",
         "/rock-paper-scissors-lg/polyfills.7579816f5667ab47.js",
         "/rock-paper-scissors-lg/runtime.4b8f27005ea07779.js",
@@ -99,9 +99,9 @@
     "/rock-paper-scissors-lg/assets/img/real-scissors.png": "35d063003588ab7ddf9ec49163ba1c6a79376a3a",
     "/rock-paper-scissors-lg/assets/img/rules.png": "9a078ecb91eb33c847f00f9671c38b1d0d465143",
     "/rock-paper-scissors-lg/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/rock-paper-scissors-lg/index.html": "e9cd7e388f8fa428a5e894a7ce75eb0e02aed8fb",
-    "/rock-paper-scissors-lg/main.229dd85b762a21db.js": "6689a1fbb57d17b1f3ca82f46732a05b3815605f",
-    "/rock-paper-scissors-lg/manifest.webmanifest": "970faf6d6a59f042f97700db94c4c51a02d83496",
+    "/rock-paper-scissors-lg/index.html": "deebec803abf32c3476b70a7fa99cbb28c92ff90",
+    "/rock-paper-scissors-lg/main.672351a988ffc314.js": "8ccb8b7d9318730f7c6423300ecd3eb921be5a0d",
+    "/rock-paper-scissors-lg/manifest.webmanifest": "05915f17662aead1e9108f0cad891c6e5aa8e151",
     "/rock-paper-scissors-lg/muli-latin-200.21163966da5e4e66.woff": "cdbc3fa886873e1ecc7cdafd605638516a1083bf",
     "/rock-paper-scissors-lg/muli-latin-200.f79b07074e7cd108.woff2": "7237ac858635967147d8fec6fb3d7495fbf18130",
     "/rock-paper-scissors-lg/muli-latin-200italic.7ee5a58372949f3f.woff": "a220dbfc962d8da015434779ff8ea78a452da4eb",
