@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1638426852875,
+  "timestamp": 1638426936647,
   "index": "/rock-paper-scissors-lg/index.html",
   "assetGroups": [
     {
@@ -101,7 +101,7 @@
     "/rock-paper-scissors-lg/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/rock-paper-scissors-lg/index.html": "48691681a37cde757956611d7b26274afe3e018e",
     "/rock-paper-scissors-lg/main.ac6f1152f7d6fc10.js": "1c82320f4fff6c226842a5eef41e7465cded60cf",
-    "/rock-paper-scissors-lg/manifest.webmanifest": "9deacc16bd2de3adc8b02300ca665c83eeae5bab",
+    "/rock-paper-scissors-lg/manifest.webmanifest": "970faf6d6a59f042f97700db94c4c51a02d83496",
     "/rock-paper-scissors-lg/muli-latin-200.21163966da5e4e66.woff": "cdbc3fa886873e1ecc7cdafd605638516a1083bf",
     "/rock-paper-scissors-lg/muli-latin-200.f79b07074e7cd108.woff2": "7237ac858635967147d8fec6fb3d7495fbf18130",
     "/rock-paper-scissors-lg/muli-latin-200italic.7ee5a58372949f3f.woff": "a220dbfc962d8da015434779ff8ea78a452da4eb",
